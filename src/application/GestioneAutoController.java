@@ -92,7 +92,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 	
 	    private void caricaTabella(){
 	    	
-	    	
+	    	tbl.getColumns().clear();
 	    	
 	    	colTarga = new TableColumn<>("Targa");
 	    	colMarca = new TableColumn<>("Marca");
@@ -100,9 +100,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 	    	colAnnoImmatricolazione = new TableColumn<>("Anno Immatricolazione");
 	    	colPotenzaKW = new TableColumn<>("Potenza KW");
 	    	
-	    	PropertyValueFactory<Auto, String> fTarga = new PropertyValueFactory<>("targa");
+	    	PropertyValueFactory<AutoModel, String> fTarga = new PropertyValueFactory<>("targa");
 	    	
-	    	colTarga.setCellValueFactory(new PropertyValueFactory<>("ftarga"));
+	    	colTarga.setCellValueFactory(new PropertyValueFactory<>("targa"));
 	    	colMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
 	    	colModello.setCellValueFactory(new PropertyValueFactory<>("Modello"));
 	    	colAnnoImmatricolazione.setCellValueFactory(new PropertyValueFactory<>("annoImmatricolazione"));
