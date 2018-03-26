@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import it.andrea.gestioneAuto.modello.Auto;
 import it.andrea.gestioneAuto.modello.AutoModel;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,6 +44,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 	    private TableColumn<Auto, Integer> colAnnoImmatricolazione;
 	    @FXML
 	    private TableColumn<Auto, Integer> colPotenzaKW;
+	    
+	
 	    
 	    @FXML
 	    public void suNuovaAuto(ActionEvent event) {
@@ -91,7 +94,15 @@ import javafx.scene.control.cell.PropertyValueFactory;
 	    }
 	
 	    private void caricaTabella(){
+	    
+	    	autoModel.setAuto(new Auto("AF631AK","Fiat","Punto"));
+	    	autoModel.setAuto(new Auto("DP862RG","Seat","Ibiza"));
 	    	
+	    	//creo un observable list
+	    	ObservableList<Auto> lst = FXCollections.observableArrayList(autoModel.getLstAuto());
+			
+			//creo le colonne 
+	
 	    	tbl.getColumns().clear();
 	    	
 	    	colTarga = new TableColumn<>("Targa");
@@ -100,7 +111,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 	    	colAnnoImmatricolazione = new TableColumn<>("Anno Immatricolazione");
 	    	colPotenzaKW = new TableColumn<>("Potenza KW");
 	    	
-	    	PropertyValueFactory<AutoModel, String> fTarga = new PropertyValueFactory<>("targa");
+	    	//setto le proprieta delle colonne
 	    	
 	    	colTarga.setCellValueFactory(new PropertyValueFactory<>("targa"));
 	    	colMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
@@ -108,7 +119,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 	    	colAnnoImmatricolazione.setCellValueFactory(new PropertyValueFactory<>("annoImmatricolazione"));
 	    	colPotenzaKW.setCellValueFactory(new PropertyValueFactory<>("potenzaKW"));
 	    	
+	    	//aggiungo le colonne
+	    	
 	    	tbl.getColumns().addAll(colTarga,colMarca,colModello,colPotenzaKW,colAnnoImmatricolazione);
+	    	
+	    	//riempo i dati con i valori della obsevableList
+	    	tbl.setItems(lst);
 	    }
 	
 	}

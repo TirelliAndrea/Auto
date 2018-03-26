@@ -9,4 +9,5 @@ public class NuovaAutoController {
     @FXML
     private AnchorPane paneNuovaAuto;
 
+    
 }

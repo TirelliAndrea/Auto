@@ -1,7 +1,15 @@
 package it.andrea.gestioneAuto.modello;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
+
+import javafx.beans.InvalidationListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 
 public class AutoModel{
 
@@ -29,6 +37,8 @@ public class AutoModel{
 	public List<Auto> getLstAuto() {
 		return lstAuto;
 	}
+
+	
 
 	public void setLstAuto(List<Auto> lstAuto) {
 		this.lstAuto = lstAuto;
