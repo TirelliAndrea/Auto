@@ -17,6 +17,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 
 	
 
@@ -98,11 +99,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 	    	autoModel.setAuto(new Auto("AF631AK","Fiat","Punto"));
 	    	autoModel.setAuto(new Auto("DP862RG","Seat","Ibiza"));
 	    	
+	    	tbl.setEditable(true);
 	    	//creo un observable list
 	    	ObservableList<Auto> lst = FXCollections.observableArrayList(autoModel.getLstAuto());
 			
 			//creo le colonne 
-	
+	    	
 	    	tbl.getColumns().clear();
 	    	
 	    	colTarga = new TableColumn<>("Targa");
@@ -125,6 +127,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 	    	
 	    	//riempo i dati con i valori della obsevableList
 	    	tbl.setItems(lst);
+	    	tbl.getItems().add(new Auto());
+	    	colTarga.setCellFactory(TextFieldTableCell.<Auto>forTableColumn());
 	    }
 	
 	}

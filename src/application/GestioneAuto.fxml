@@ -47,6 +47,6 @@
       <TreeView BorderPane.alignment="CENTER" />
    </left>
    <center>
-      <TableView fx:id="tbl" prefHeight="556.0" prefWidth="509.0" BorderPane.alignment="CENTER" />
+      <TableView fx:id="tbl" prefHeight="556.0" prefWidth="509.0" BorderPane.alignment="CENTER"  />
    </center>
 </BorderPane>

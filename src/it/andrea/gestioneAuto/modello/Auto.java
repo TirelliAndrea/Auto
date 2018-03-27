@@ -11,6 +11,9 @@ public class Auto {
 	private int potenzaKW;
 	
 
+	public Auto(){
+		
+	}
 
 	/**
 	 * Costruttore della Clase Auto, 
