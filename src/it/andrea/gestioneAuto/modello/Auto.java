@@ -33,6 +33,17 @@ public class Auto {
 		this.modello = modello;
 		
 	}
+	
+	
+
+	public Auto(String targa, String marca, String modello, int annoImmatricolazione, int potenzaKW) {
+		super();
+		this.targa = targa;
+		this.marca = marca;
+		this.modello = modello;
+		this.annoImmatricolazione = annoImmatricolazione;
+		this.potenzaKW = potenzaKW;
+	}
 
 	public String getTarga() {
 		return targa;

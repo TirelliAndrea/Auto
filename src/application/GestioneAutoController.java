@@ -87,6 +87,8 @@ import javafx.scene.control.cell.TextFieldTableCell;
 				pan.setBottom(root);
 				//aggiungo la scena allo stage che mi ha passato il metodo main
 				stage.setScene(scene);
+				NuovaAutoController nuovaAutoController = loader.getController();
+				nuovaAutoController.setAutoModel(autoModel);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -96,8 +98,8 @@ import javafx.scene.control.cell.TextFieldTableCell;
 	
 	    private void caricaTabella(){
 	    
-	    	autoModel.setAuto(new Auto("AF631AK","Fiat","Punto"));
-	    	autoModel.setAuto(new Auto("DP862RG","Seat","Ibiza"));
+	    	//autoModel.setAuto(new Auto("AF631AK","Fiat","Punto"));
+	    	//autoModel.setAuto(new Auto("DP862RG","Seat","Ibiza"));
 	    	
 	    	tbl.setEditable(true);
 	    	//creo un observable list
