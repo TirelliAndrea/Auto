@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+import it.andrea.gestioneAuto.dao.AutoDAO;
 import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -35,7 +36,8 @@ public class AutoModel{
 	//to do funzione che restituisce lista auto
 	
 	public List<Auto> getLstAuto() {
-		return lstAuto;
+		AutoDAO a = new AutoDAO();
+		return a.ListaAuto();
 	}
 
 	
